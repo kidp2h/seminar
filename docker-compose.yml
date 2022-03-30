@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:80
+    volumes:
+      - ./src:/var/www/html
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8089:80
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      PMA_HOST: 184.168.99.241
+      PMA_USER: "eb4p7xlxbl39"
+      PMA_PASSWORD: "Sliverdz2604"
